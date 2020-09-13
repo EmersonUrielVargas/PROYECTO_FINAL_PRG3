@@ -1,4 +1,6 @@
-package model;
+package models;
+
+import enums.TypeUser;
 
 public class User {
 	
@@ -17,7 +19,6 @@ public class User {
 	}
 	
 	public User() {
-		
 	}
 
 
