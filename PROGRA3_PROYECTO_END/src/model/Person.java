@@ -8,11 +8,14 @@ public class Person {
 	
 	
 	public Person(String name, String lastName, TypeId tipeId, int numberId) {
-		super();
 		this.name = name;
 		this.lastName = lastName;
 		this.tipeId = tipeId;
 		this.numberId = numberId;
+	}
+	
+	public Person() {
+		
 	}
 
 

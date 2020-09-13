@@ -15,12 +15,19 @@ public class User {
 		this.client = client;
 		this.typeUser = typeUser;
 	}
+	
+	public User() {
+		
+	}
 
 
 	public String getNickName() {
 		return nickName;
 	}
-
+	
+	public String getPassword() {
+		return password;
+	}
 
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
