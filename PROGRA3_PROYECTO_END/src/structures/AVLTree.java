@@ -53,6 +53,21 @@ public class AVLTree<T> {
 			return ask(data, node.getRigth());
 		}
 	}
+	
+	public boolean exist(T data, NodeAVL<T> node) {
+
+		if (node == null) {
+			return false;
+		}
+
+		if (comparator.compare(data, node.getData()) == 0) {
+			return true;
+		} else if (comparator.compare(data, node.getData()) == -1) {
+			return exist(data, node.getLeft());
+		} else {
+			return exist(data, node.getRigth());
+		}
+	}
 
 	private NodeAVL<T> insert(NodeAVL<T> node, T data) {
 		if (node == null)
