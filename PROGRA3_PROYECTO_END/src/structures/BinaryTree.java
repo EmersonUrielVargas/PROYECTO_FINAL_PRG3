@@ -12,18 +12,6 @@ public class BinaryTree<T> {
 		this.comparator = comparator;
 	}
 
-
-	
-	public NodeTree<T> askError(NodeTree<T> node){
-		if(balanced(node)==false) {
-			int heigthLeft = heightOfBinaryTree(node.getLeft());
-			int heigthRigth = heightOfBinaryTree(node.getRigth());	
-			if(heigthRigth-heigthLeft==2||heigthRigth-heigthLeft==-2) {
-				return node;
-			}
-		}
-	}
-
 	public void insert(T data) {
 		NodeTree<T> newNode = new NodeTree<T>(data);
 		if (isEmpty()) {

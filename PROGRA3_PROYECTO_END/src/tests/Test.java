@@ -1,7 +1,6 @@
 package tests;
 
 import comparators.ComparatorByPartialNote;
-import comparators.ComparatorByString;
 import enums.TypeId;
 import models.FinalNote;
 import models.PartialNote;
@@ -24,7 +23,7 @@ public class Test {
 		partialNotes.insert(p1);
 		partialNotes.insert(p2);
 		partialNotes.insert(p3);
-		
+		System.out.println(partialNotes.exist(p2, partialNotes.getRoot()));
 		Teacher te = new Teacher("Pedro", "Flores", TypeId.CC, 1234);
 		Subject subject = new Subject(1, "Naturales", te);
 		FinalNote finalNote = new FinalNote(subject);

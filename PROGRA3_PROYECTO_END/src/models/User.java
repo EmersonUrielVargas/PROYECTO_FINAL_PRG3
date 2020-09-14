@@ -10,14 +10,24 @@ public class User {
 	private TypeUser typeUser;
 	
 	
-	public User(String nickName, String password, Person client, TypeUser typeUser) {
+	public User(Person client, TypeUser typeUser) {
+		super();
+		this.client = client;
+		this.typeUser = typeUser;
+		this.nickName = this.client.getLastName().charAt(0) + this.client.getLastName().charAt(0) + client.getNumberId() + "";
+		this.password = this.client.getName().charAt(0) + this.client.getLastName().charAt(1) + client.getNumberId() + "";;
+	}
+	
+	
+	
+	public User(String nickName, String password) {
 		super();
 		this.nickName = nickName;
 		this.password = password;
-		this.client = client;
-		this.typeUser = typeUser;
 	}
-	
+
+
+
 	public User() {
 	}
 
@@ -28,24 +38,6 @@ public class User {
 	
 	public String getPassword() {
 		return password;
-	}
-
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
-
-
-	public Boolean VerifyPassword(String password) {
-		boolean isEquals = false;
-		if (this.password.compareTo(password) == 0) {
-			isEquals = true;
-		}
-		return isEquals;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 

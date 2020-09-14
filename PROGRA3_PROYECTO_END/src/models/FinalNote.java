@@ -23,28 +23,27 @@ public class FinalNote {
 			value += auxiliar.getData().getValue();
 			calculateFinalNote(auxiliar.getRigth());
 		}
-		
-		value = value ;
 	}
-	
+
 	public void addPartialNote(PartialNote partialNote) {
 		partialNotes.insert(partialNote);
 	}
-	
+
 	public PartialNote askPartialNote(String topic) {
-		return partialNotes.ask(new PartialNote(topic,0,""), partialNotes.getRoot()).getData();
+		return partialNotes.ask(new PartialNote(topic, 0, ""), partialNotes.getRoot()).getData();
 	}
-	
-	public void modifyPartialNote(String topic,double value , String notation) {
+
+	public void modifyPartialNote(String topic, double value, String notation) {
 		PartialNote note = this.askPartialNote(topic);
 		note.setValue(value);
 		note.setNotation(notation);
 	}
-	
-	public void addComment(String topic,String comment) {
+
+	public void addComment(String topic, String comment) {
 		PartialNote note = this.askPartialNote(topic);
-		note.setComment(comment);;
-		}
+		note.setComment(comment);
+
+	}
 
 	public Subject getSubject() {
 		return subject;
@@ -64,7 +63,7 @@ public class FinalNote {
 
 	public double getValue() {
 		calculateFinalNote(partialNotes.getRoot());
-		return value;
+		return value / partialNotes.getRoot().getSize();
 	}
 
 	public void setValue(double value) {
