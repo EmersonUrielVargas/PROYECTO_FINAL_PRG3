@@ -14,7 +14,7 @@ public class User {
 		super();
 		this.client = client;
 		this.typeUser = typeUser;
-		this.nickName = this.client.getLastName().charAt(0) + this.client.getLastName().charAt(0) + client.getNumberId() + "";
+		this.nickName = this.client.getLastName().charAt(0) + this.client.getLastName().charAt(1) + client.getNumberId() + "";
 		this.password = this.client.getName().charAt(0) + this.client.getLastName().charAt(1) + client.getNumberId() + "";;
 	}
 	
@@ -59,6 +59,19 @@ public class User {
 	public void setTypeUser(TypeUser typeUser) {
 		this.typeUser = typeUser;
 	}
+
+
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 	
 	
 	

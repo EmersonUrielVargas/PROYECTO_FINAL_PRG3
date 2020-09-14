@@ -12,7 +12,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import controller.Commands;
-import controller.ControllerApp;
 import controller.ControllerClient;
 import utils.Constants;
 
