@@ -85,7 +85,9 @@ public class ControllerClient implements ActionListener, ItemListener, KeyListen
 			break;
 		case AC_MI_HELP:
 			break;
-		case AC_MI_SETTINGS:
+			
+			
+		case C_LOG_IN:
 			break;
 
 		default:

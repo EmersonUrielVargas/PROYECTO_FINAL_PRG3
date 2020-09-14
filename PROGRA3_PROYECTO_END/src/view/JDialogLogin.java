@@ -12,45 +12,36 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import controller.Commands;
-import controller.ControllerApp;
 import controller.ControllerClient;
 import utils.Constants;
 
 public class JDialogLogin extends JDialog {
-	private JBaseLabel jBlImage;
-	private JBaseLabel jBLError;
-	private JBaseLabel jBLNickName;
-	private JBaseTextField jBTFNickName;
-	private JBaseLabel jBLPassword;
-	private JBaseTextField jBTFPassword;
-	private JBaseLabel jBLTypeUser;
-	private JBaseButton jBBlogin;
-	private JBaseComboBox jBCBTypeUser;
+	private JLBaseLabel jlImage;
+	private JLBaseLabel jLError;
+	private JLBaseLabel jLNickName;
+	private JTFBaseTextField jTFNickName;
+	private JLBaseLabel jLPassword;
+	private JPasswordField jPFPassword;
+	private JLBaseLabel jLTypeUser;
+	private JBBaseButton jBlogin;
+	private JCBaseComboBox jBCBTypeUser;
 	
-	public JDialogLogin(ControllerClient controller) {
+	public JDialogLogin(ControllerClient controller, Object[] TypeUser) {
 		super();
-		setSize(500,400);
+		init(controller, TypeUser);
 		
 	}
 	
-	private JLBaseLabel jLabelId;
-	private JTextField jTextFieldId;
-	private JLBaseLabel jLabelPassword;
-	private JPasswordField jPasswordField;
-	private JLabel iconLogin;
-	private JLBaseLabel jLabelIncorrectLogin;
-	private JBBaseButton jBlogin;
-	
-
-
-	private void init(ControllerClient controllerApp) {
-		this.setSize(400, 600);
-		this.jBLNickName = new JLBaseLabel(Constants.TEXT_LOGIN_LABEL, Constants.EIGHTEEN_BASE_FONT, Constants.DARK_GREEN);
-		this.jTextFieldId =new JTextField(10);
-		this.jLabelPassword =  new JLBaseLabel(Constants.TEXT_PASSWORD_LOGIN_LABEL, Constants.BASE_LOGIN_FONT, Constants.DARK_GREEN);
-		this.jPasswordField = new JPasswordField(15);
-		this.iconLogin = new JLabel(new ImageIcon(getClass().getResource(Constants.LOGIN_ICON)));
-		this.jLabelIncorrectLogin = new JLBaseLabel("", Constants.BASE_LOGIN_FONT, Color.RED);
+	private void init(ControllerClient controllerApp, Object[] typeUser) {
+		this.setSize(400, 700);
+		this.jLNickName = new JLBaseLabel(Constants.TEXT_LOGIN_LABEL, Constants.EIGHTEEN_BASE_FONT, Constants.DARK_GREEN);
+		this.jTFNickName = new JTFBaseTextField(Constants.BASE_GREEN, Constants.EIGHTEEN_BASE_FONT,10);
+		this.jLPassword =  new JLBaseLabel(Constants.TEXT_PASSWORD_LOGIN_LABEL, Constants.BASE_LOGIN_FONT, Constants.DARK_GREEN);
+		this.jPFPassword = new JPasswordField(15);
+		this.jLTypeUser = new JLBaseLabel(Constants.TEXT_TYPE_USER_LOGIN_LABEL, Constants.EIGHTEEN_BASE_FONT, Constants.DARK_GREEN);
+		this.jBCBTypeUser = new JCBaseComboBox(controllerApp, typeUser);
+		this.jlImage = new JLBaseLabel(Constants.LOGIN_ICON);
+		this.jLError = new JLBaseLabel("", Constants.BASE_LOGIN_FONT, Color.RED);
 		this.jBlogin = new JBBaseButton(Constants.LOGIN_BUTTON, Constants.BASE_GREEN);
 		this.jBlogin.addActionListener(controllerApp);
 		this.jBlogin.setActionCommand(Commands.C_LOG_IN.toString());
@@ -60,15 +51,15 @@ public class JDialogLogin extends JDialog {
 		jPanelComponents.setSize(250, 250);
 		jPanelComponents.setBorder(BorderFactory.createEmptyBorder(10, 30, 0, 30));
 		jPanelComponents.setLayout(new GridLayout(7,1,30,10));
-		jPanelComponents.add(jLabelIncorrectLogin);
-		jPanelComponents.add(jLabelId);
-		jPanelComponents.add(jTextFieldId);
-		jPanelComponents.add(jLabelPassword);		
-		jPanelComponents.add(jPasswordField);
+		jPanelComponents.add(jLError);
+		jPanelComponents.add(jLNickName);
+		jPanelComponents.add(jTFNickName);
+		jPanelComponents.add(jLPassword);		
+		jPanelComponents.add(jPFPassword);
 		jPanelComponents.add(new JPanel().add(jBlogin));
 		jPanelComponents.add(new JLabel());
 	
-		this.add(iconLogin);
+		this.add(jlImage);
 		this.add(jPanelComponents);
 		this.setVisible(false);
 		this.setResizable(false);
@@ -76,19 +67,19 @@ public class JDialogLogin extends JDialog {
 	
 	public String[] getDataLogIn() {
 		String[] data = new String[2];
-		data[0] = this.jTextFieldId.getText();
-		data[1] = String.copyValueOf(this.jPasswordField.getPassword());
+		data[0] = this.jTFNickName.getText();
+		data[1] = String.copyValueOf(this.jPFPassword.getPassword());
 		return data;
 	}
 	
 	public void restoreValue() {
-		this.jTextFieldId.setText("");
-		this.jPasswordField.setText("");
-		this.jLabelIncorrectLogin.setText("");
+		this.jTFNickName.setText("");
+		this.jPFPassword.setText("");
+		this.jLError.setText("");
 		this.setVisible(false);
 	}
 	public void incorrectLogin() {
-		this.jLabelIncorrectLogin.setText("La informacion no es correcta");
+		this.jLError.setText("La informacion no es correcta");
 	}
 	
 	

@@ -5,15 +5,15 @@ import javax.swing.JComboBox;
 
 import controller.ControllerClient;
 
-public class JBaseComboBox extends JComboBox{
+public class JCBaseComboBox extends JComboBox{
 	
-	public JBaseComboBox(ControllerClient controller,Object[] list) {
+	public JCBaseComboBox(ControllerClient controller,Object[] list) {
 		this.addItemListener(controller);
 		this.setModel(new DefaultComboBoxModel<>(list));
 	}
 	
 	
-	public JBaseComboBox(ControllerClient controller) {
+	public JCBaseComboBox(ControllerClient controller) {
 		this.addItemListener(controller);
 	}
 	
