@@ -6,5 +6,7 @@ public class MyFrame extends JFrame{
 	
 	private JDialogLogin jdLogin;
 	
+	
+	
 
 }

@@ -8,11 +8,11 @@ import javax.swing.JTextField;
 
 import controller.ControllerClient;
 
-public class JTFBaseTextField extends JTextField{
+public class JTextFieldBase extends JTextField{
 
 	private static final long serialVersionUID = 1L;
 
-	public JTFBaseTextField(String text, Font font, Color foreColor, int borderSize, 
+	public JTextFieldBase(String text, Font font, Color foreColor, int borderSize, 
 			ControllerClient controllerApp) {
 		this.setFont(font);
 		this.setForeground(foreColor);
@@ -22,7 +22,7 @@ public class JTFBaseTextField extends JTextField{
         this.addKeyListener(controllerApp);
 	}
 	
-	public JTFBaseTextField( Color foreColor,Font font, int columns) {
+	public JTextFieldBase( Color foreColor,Font font, int columns) {
 		this.setFont(font);
 		this.setForeground(foreColor);
 		this.setColumns(columns);

@@ -16,15 +16,15 @@ import controller.ControllerClient;
 import utils.Constants;
 
 public class JDialogLogin extends JDialog {
-	private JLBaseLabel jlImage;
-	private JLBaseLabel jLError;
-	private JLBaseLabel jLNickName;
-	private JTFBaseTextField jTFNickName;
-	private JLBaseLabel jLPassword;
+	private JLabelBase jlImage;
+	private JLabelBase jLError;
+	private JLabelBase jLNickName;
+	private JTextFieldBase jTFNickName;
+	private JLabelBase jLPassword;
 	private JPasswordField jPFPassword;
-	private JLBaseLabel jLTypeUser;
-	private JBBaseButton jBlogin;
-	private JCBaseComboBox jBCBTypeUser;
+	private JLabelBase jLTypeUser;
+	private JButtonBase jBlogin;
+	private JComboBoxBase jBCBTypeUser;
 	
 	public JDialogLogin(ControllerClient controller, Object[] TypeUser) {
 		super();
@@ -34,15 +34,15 @@ public class JDialogLogin extends JDialog {
 	
 	private void init(ControllerClient controllerApp, Object[] typeUser) {
 		this.setSize(400, 700);
-		this.jLNickName = new JLBaseLabel(Constants.TEXT_LOGIN_LABEL, Constants.EIGHTEEN_BASE_FONT, Constants.DARK_GREEN);
-		this.jTFNickName = new JTFBaseTextField(Constants.BASE_GREEN, Constants.EIGHTEEN_BASE_FONT,10);
-		this.jLPassword =  new JLBaseLabel(Constants.TEXT_PASSWORD_LOGIN_LABEL, Constants.BASE_LOGIN_FONT, Constants.DARK_GREEN);
+		this.jLNickName = new JLabelBase(Constants.TEXT_LOGIN_LABEL, Constants.EIGHTEEN_BASE_FONT, Constants.DARK_GREEN);
+		this.jTFNickName = new JTextFieldBase(Constants.BASE_GREEN, Constants.EIGHTEEN_BASE_FONT,10);
+		this.jLPassword =  new JLabelBase(Constants.TEXT_PASSWORD_LOGIN_LABEL, Constants.BASE_LOGIN_FONT, Constants.DARK_GREEN);
 		this.jPFPassword = new JPasswordField(15);
-		this.jLTypeUser = new JLBaseLabel(Constants.TEXT_TYPE_USER_LOGIN_LABEL, Constants.EIGHTEEN_BASE_FONT, Constants.DARK_GREEN);
-		this.jBCBTypeUser = new JCBaseComboBox(controllerApp, typeUser);
-		this.jlImage = new JLBaseLabel(Constants.LOGIN_ICON);
-		this.jLError = new JLBaseLabel("", Constants.BASE_LOGIN_FONT, Color.RED);
-		this.jBlogin = new JBBaseButton(Constants.LOGIN_BUTTON, Constants.BASE_GREEN);
+		this.jLTypeUser = new JLabelBase(Constants.TEXT_TYPE_USER_LOGIN_LABEL, Constants.EIGHTEEN_BASE_FONT, Constants.DARK_GREEN);
+		this.jBCBTypeUser = new JComboBoxBase(controllerApp, typeUser);
+		this.jlImage = new JLabelBase(Constants.LOGIN_ICON);
+		this.jLError = new JLabelBase("", Constants.BASE_LOGIN_FONT, Color.RED);
+		this.jBlogin = new JButtonBase(Constants.LOGIN_BUTTON, Constants.BASE_GREEN);
 		this.jBlogin.addActionListener(controllerApp);
 		this.jBlogin.setActionCommand(Commands.C_LOG_IN.toString());
 		this.setLayout(new GridLayout(2, 1, 40, 30));

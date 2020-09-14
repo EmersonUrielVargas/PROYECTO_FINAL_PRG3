@@ -8,11 +8,11 @@ import controller.Commands;
 import controller.ControllerClient;
 import utils.Constants;
 
-public class JMIBaseMenuItem extends JMenuItem{
+public class JMenuItemBase extends JMenuItem{
 
 	private static final long serialVersionUID = 1L;
 
-	public JMIBaseMenuItem(String text, ControllerClient controllerApp, Commands command) {
+	public JMenuItemBase(String text, ControllerClient controllerApp, Commands command) {
 		this.setText(text);
 		this.setFont(Constants.FOURTEEN_BOLD_TAHOMA_FONT);
 		this.setForeground(Color.WHITE);
@@ -23,7 +23,7 @@ public class JMIBaseMenuItem extends JMenuItem{
 		this.setBackground(Constants.DARK_GREEN);
 	}
 	
-	public JMIBaseMenuItem(String text) {
+	public JMenuItemBase(String text) {
 		this.setText(text);
 		this.setFont(Constants.FOURTEEN_BOLD_TAHOMA_FONT);
 		this.setForeground(Color.WHITE);

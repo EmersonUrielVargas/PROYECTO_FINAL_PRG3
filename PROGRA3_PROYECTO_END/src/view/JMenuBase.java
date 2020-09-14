@@ -5,12 +5,12 @@ import javax.swing.BorderFactory;
 import javax.swing.JMenu;
 import utils.Constants;
 
-public class JMBaseMenu extends JMenu{
+public class JMenuBase extends JMenu{
 
 	private static final long serialVersionUID = 1L;
 
 	
-	public JMBaseMenu(String text, int borderHorizontalSize) {
+	public JMenuBase(String text, int borderHorizontalSize) {
 		this.setText(text);
 		this.setFont(Constants.FOURTEEN_BOLD_TAHOMA_FONT);
 		this.setForeground(Color.WHITE);
@@ -20,7 +20,7 @@ public class JMBaseMenu extends JMenu{
 		this.setOpaque(true);
 	}
 	
-	public JMBaseMenu(String text) {
+	public JMenuBase(String text) {
 		this.setText(text);
 		this.setFont(Constants.FOURTEEN_BOLD_TAHOMA_FONT);
 		this.setForeground(Color.WHITE);

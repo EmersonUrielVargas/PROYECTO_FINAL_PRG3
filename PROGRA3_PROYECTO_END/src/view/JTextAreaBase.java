@@ -6,11 +6,11 @@ import java.awt.Font;
 import javax.swing.JTextArea;
 import utils.Constants;
 
-public class JTABaseTextArea extends JTextArea {
+public class JTextAreaBase extends JTextArea {
 
 	private static final long serialVersionUID = 1L;
 
-	public JTABaseTextArea(String text, Font font, Color foreColor) {
+	public JTextAreaBase(String text, Font font, Color foreColor) {
 		Integer [] dimension = determineDimension(text);
 		int width = dimension [0];
 		int height = dimension [1];
