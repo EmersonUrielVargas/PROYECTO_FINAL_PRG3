@@ -61,4 +61,22 @@ public class Constants {
 			public static final int JBSEARCH_GAP = 0;
 			public static final String JTFSEARCH_INICIAL_TEXT = "Ingrese el Id a buscar";
 			public static final int JTFSEARCH_BORDER_SIZE = 10;
+			
+//Constants of Jbuttons admin-----------------------------------------------
+			public static final String SHOW_COURSES_ICON = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_COURSES_ICON_PRESS = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_TEACHERS_ICON = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_TEACHERS_ICON_PRESS = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_STUDENTS_ICON = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_STUDENTS_ICON_PRESS = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_SUBJECTS_ICON = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_SUBJECTS_ICON_PRESS = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_LOGIN_ICON = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_LOGIN_ICON_PRESS = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_LOGOUT_ICON = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_LOGOUT_ICON_PRESS = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_REGISTER_USER_ICON = "/images/SHOW_TEACHERS_ICON.png";
+			public static final String SHOW_REGISTER_USER_ICON_PRESS = "/images/SHOW_TEACHERS_ICON.png";
+			
+			
 }

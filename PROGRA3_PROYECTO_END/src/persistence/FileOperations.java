@@ -10,6 +10,8 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
 
+import enums.TypeId;
+import enums.TypeUser;
 import models.Person;
 import models.User;
 import utils.Constants;
@@ -17,9 +19,9 @@ import utils.Constants;
 
 public class FileOperations {
 
-	public ArrayList<User> readProductsFile(String pathFile) throws JsonParseException, IOException {
+	public ArrayList<User> readUsersFile(String pathFile) throws JsonParseException, IOException {
 		JsonParser jsonParser = new JsonFactory().createParser(new File(pathFile));
-		ArrayList<User> products = new ArrayList<User>();
+		ArrayList<User> users = new ArrayList<User>();
 		while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
 			User user = new User();
 			while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
@@ -35,38 +37,20 @@ public class FileOperations {
 						case "client":
 							jsonParser.nextToken();
 							user.setClient(readPerson(jsonParser));
-							product.setSubcategory(readSubcategory(jsonParser));
 							break;
-						case "expirationDate":
+						case "typeUser":
 							jsonParser.nextToken();
-							product.setExpirationDate(Utils.formatDate(jsonParser.getText(), Constants.DATE_SEPARATOR));
-							break;
-						case "stock":
-							jsonParser.nextToken();
-							product.setStock(jsonParser.getIntValue());
-							break;
-						case "value":
-							jsonParser.nextToken();
-							product.setValue(jsonParser.getDoubleValue());
-							break;
-						case "iva":
-							jsonParser.nextToken();
-							product.setIva(jsonParser.getByteValue());
-							break;
-						case "warranty":
-							jsonParser.nextToken();
-							product.setWarranty(jsonParser.getShortValue());
+							user.setTypeUser(TypeUser.valueOf(jsonParser.getText()));
 							break;
 					}
 				}
 			}
-			products.add(product);
-			System.out.println(product.getId());
+			users.add(user);
 		}
-		return products;
+		return users;
 	}
 		
-	private Person readPerson(JsonParser jsonParser) {
+	private Person readPerson(JsonParser jsonParser) throws JsonParseException, IOException {
 		Person person = new Person();
 		while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
 			if (jsonParser.getCurrentName() != null) {
@@ -77,58 +61,54 @@ public class FileOperations {
 					break;
 				case "name":
 					jsonParser.nextToken();
-					subcategory.setName(jsonParser.getText());
+					person.setName(jsonParser.getText());
 					break;
-				case "category":
+				case "typeId":
 					jsonParser.nextToken();
-					subcategory.setCategory(readCategory(jsonParser));
+					person.setTypeId(TypeId.valueOf(jsonParser.getText()));
+					break;
+				case "lastName":
+					jsonParser.nextToken();
+					person.setLastName(jsonParser.getText());
 					break;
 				}
 			}
 		}
-		return null;
-	}
-
-	private Subcategory readSubcategory(JsonParser jsonParser) throws JsonParseException, IOException {
-		Subcategory subcategory = new Subcategory();
-		while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
-			if (jsonParser.getCurrentName() != null) {
-				switch (jsonParser.getCurrentName()) {
-				case "id":
-					jsonParser.nextToken();
-					subcategory.setId(jsonParser.getIntValue());
-					break;
-				case "name":
-					jsonParser.nextToken();
-					subcategory.setName(jsonParser.getText());
-					break;
-				case "category":
-					jsonParser.nextToken();
-					subcategory.setCategory(readCategory(jsonParser));
-					break;
-				}
-			}
-		}
-		return subcategory;
+		return person;
 	}
 	
-	private Category readCategory(JsonParser jsonParser) throws JsonParseException, IOException {
-		Category category = new Category();
-		while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
-			if (jsonParser.getCurrentName() != null) {
-				switch (jsonParser.getCurrentName()) {
-				case "id":
-					jsonParser.nextToken();
-					category.setId(jsonParser.getIntValue());
-					break;
-				case "name":
-					category.setName(jsonParser.getText());
-					break;
+	public ArrayList<User> reaNotesFile(String pathFile) throws JsonParseException, IOException {
+		JsonParser jsonParser = new JsonFactory().createParser(new File(pathFile));
+		ArrayList<User> users = new ArrayList<User>();
+		while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
+			User user = new User();
+			while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
+				if (jsonParser.getCurrentName() != null) {
+					switch (jsonParser.getCurrentName()) {
+						case "nickName":
+							jsonParser.nextToken();
+							user.setNickName(jsonParser.getText());
+							break;
+						case "password":
+							user.setNickName(jsonParser.getText());
+							break;
+						case "client":
+							jsonParser.nextToken();
+							user.setClient(readPerson(jsonParser));
+							break;
+						case "typeUser":
+							jsonParser.nextToken();
+							user.setTypeUser(TypeUser.valueOf(jsonParser.getText()));
+							break;
+					}
 				}
-			}	
+			}
+			users.add(user);
 		}
-		return category;
+		return users;
 	}
+
+	
 
 	
 }

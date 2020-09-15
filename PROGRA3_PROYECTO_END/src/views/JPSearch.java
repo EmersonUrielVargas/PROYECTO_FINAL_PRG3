@@ -1,4 +1,4 @@
-package view;
+package views;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -31,9 +31,9 @@ public class JPSearch extends JPanel implements MouseListener{
 	
 	private void startComponents(ControllerClient controllerApp) {
 		jtfSearh = new JTFBaseTextField(Constants.JTFSEARCH_INICIAL_TEXT, Constants.EIGHTEEN_BASE_FONT, Constants.BASE_LIGHT_GRAY, 
-				Constants.JTFSEARCH_BORDER_SIZE, this, controllerApp);
+				Constants.JTFSEARCH_BORDER_SIZE, controllerApp);
 		jbSearch = new JBBaseButton(Constants.SEARH_ICON_PATH, Color.WHITE, controllerApp, Commands.AC_SEARCH_BY_WORDS);
-		
+		this.jtfSearh.addMouseListener(this);
 		this.add(jtfSearh);
 		this.add(jbSearch);
 	}
