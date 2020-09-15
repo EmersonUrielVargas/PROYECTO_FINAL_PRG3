@@ -24,8 +24,8 @@ public class JPSearch extends JPanel implements MouseListener{
 	
 	public JPSearch(ControllerClient controllerApp) {
 		this.setBackground(Color.WHITE);
-		this.setBorder(BorderFactory.createLineBorder(Color.BLACK, Constants.BORDER_THICKNESS));
-		this.setLayout(new FlowLayout(FlowLayout.CENTER, Constants.JBSEARCH_GAP, Constants.JBSEARCH_GAP));
+		this.setBorder(BorderFactory.createLineBorder(Constants.DARK_BLUE, Constants.BORDER_THICKNESS));
+		this.setLayout(new FlowLayout(FlowLayout.CENTER, Constants.JBSEARCH_GAPH, Constants.JBSEARCH_GAPV));
 		startComponents(controllerApp);
 	}
 	

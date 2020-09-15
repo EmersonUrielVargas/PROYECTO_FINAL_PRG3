@@ -6,14 +6,20 @@ import java.awt.Font;
 public class Constants {
 
 	//Constants of GENERAL APPEARENCE-----------------------------------------------
+		public static final Color BASE_BLUE = Color.decode("#0070BB");
+		public static final Color DARK_BLUE = Color.decode("#283F69");
+		public static final Color LIGHT_BLUE = Color.decode("#5B9BD5");
 		public static final Color BASE_GREEN = Color.decode("#1FA024");
 		public static final Color DARK_GREEN = Color.decode("#187A24");
 		public static final Color LIGHT_GREEN = Color.decode("#A2C535");
 		public static final Color BASE_LIGHT_GRAY = Color.decode("#909090");
 		public static final Color ALTERNATIVE_LIGHT_GRAY = Color.decode("#D3D3D3");
 		public static final Font EIGHTEEN_BASE_FONT = new Font("Source Sans Pro", Font.PLAIN, 18);
+		public static final Font TWENTY_FIVE_BASE_FONT = new Font("Source Sans Pro", Font.PLAIN, 25);
+		public static final Font TWENTY_BASE_FONT = new Font("Source Sans Pro", Font.PLAIN, 20);
+		public static final Font TWENTY_EIGHT_BASE_FONT = new Font("Source Sans Pro", Font.PLAIN, 28);
 		public static final Font EIGHTEEN_BOLD_BASE_FONT = new Font("Source Sans Pro", Font.BOLD, 18);
-		public static final Font SEVENTEEN_BOLD_BASE_FONT = new Font("Source Sans Pro", Font.BOLD, 16);
+		public static final Font SEVENTEEN_BOLD_BASE_FONT = new Font("Source Sans Pro", Font.BOLD, 17);
 		public static final Font FOURTEEN_BOLD_BASE_FONT = new Font("Source Sans Pro", Font.BOLD, 14);
 		public static final Font FOURTEEN_BOLD_TAHOMA_FONT = new Font("Tahoma", Font.BOLD, 14);
 		public static final Font FOURTEEN_PLAIN_TAHOMA_FONT = new Font("Tahoma", Font.PLAIN, 14);
@@ -58,7 +64,8 @@ public class Constants {
 			
 //Constants of JPSearch Class-----------------------------------------------
 			public static final String SEARH_ICON_PATH = "/images/SEARCH_ICON.png";
-			public static final int JBSEARCH_GAP = 0;
+			public static final int JBSEARCH_GAPH = 0;
+			public static final int JBSEARCH_GAPV = 10;
 			public static final String JTFSEARCH_INICIAL_TEXT = "Ingrese el Id a buscar";
 			public static final int JTFSEARCH_BORDER_SIZE = 10;
 			
