@@ -16,27 +16,16 @@ import controller.ControllerClient;
 import utils.Constants;
 
 public class JDialogLogin extends JDialog {
-<<<<<<< HEAD
-	private JLabelBase jlImage;
-	private JLabelBase jLError;
-	private JLabelBase jLNickName;
-	private JTextFieldBase jTFNickName;
-	private JLabelBase jLPassword;
-	private JPasswordField jPFPassword;
-	private JLabelBase jLTypeUser;
-	private JButtonBase jBlogin;
-	private JComboBoxBase jBCBTypeUser;
-=======
+
 	private JLBaseLabel jBlImage;
 	private JLBaseLabel jBLError;
 	private JLBaseLabel jBLNickName;
 	private JTFBaseTextField jBTFNickName;
 	private JLBaseLabel jBLPassword;
-	private JTFBaseTextField jBTFPassword;
+	private JTFBaseTextField jBPFPassword;
 	private JLBaseLabel jBLTypeUser;
 	private JBBaseButton jBBlogin;
 	private JCBBaseComboBox jBCBTypeUser;
->>>>>>> branch 'master' of https://github.com/EmersonUrielVargas/PROYECTO_FINAL_PRG3.git
 	
 	public JDialogLogin(ControllerClient controller, Object[] TypeUser) {
 		super();
@@ -46,17 +35,17 @@ public class JDialogLogin extends JDialog {
 	
 	private void init(ControllerClient controllerApp, Object[] typeUser) {
 		this.setSize(400, 700);
-		this.jLNickName = new JLabelBase(Constants.TEXT_LOGIN_LABEL, Constants.EIGHTEEN_BASE_FONT, Constants.DARK_GREEN);
-		this.jTFNickName = new JTextFieldBase(Constants.BASE_GREEN, Constants.EIGHTEEN_BASE_FONT,10);
-		this.jLPassword =  new JLabelBase(Constants.TEXT_PASSWORD_LOGIN_LABEL, Constants.BASE_LOGIN_FONT, Constants.DARK_GREEN);
-		this.jPFPassword = new JPasswordField(15);
-		this.jLTypeUser = new JLabelBase(Constants.TEXT_TYPE_USER_LOGIN_LABEL, Constants.EIGHTEEN_BASE_FONT, Constants.DARK_GREEN);
+		this.jBLNickName = new JLBaseLabel(Constants.TEXT_LOGIN_LABEL, Constants.EIGHTEEN_BASE_FONT, Constants.DARK_GREEN);
+		this.jBTFNickName = new JTextFieldBase(Constants.BASE_GREEN, Constants.EIGHTEEN_BASE_FONT,10);
+		this.jBLPassword =  new JLabelBase(Constants.TEXT_PASSWORD_LOGIN_LABEL, Constants.BASE_LOGIN_FONT, Constants.DARK_GREEN);
+		this.jBPFPassword = new JPasswordField(15);
+		this.jBLTypeUser = new JLabelBase(Constants.TEXT_TYPE_USER_LOGIN_LABEL, Constants.EIGHTEEN_BASE_FONT, Constants.DARK_GREEN);
 		this.jBCBTypeUser = new JComboBoxBase(controllerApp, typeUser);
-		this.jlImage = new JLabelBase(Constants.LOGIN_ICON);
-		this.jLError = new JLabelBase("", Constants.BASE_LOGIN_FONT, Color.RED);
-		this.jBlogin = new JButtonBase(Constants.LOGIN_BUTTON, Constants.BASE_GREEN);
-		this.jBlogin.addActionListener(controllerApp);
-		this.jBlogin.setActionCommand(Commands.C_LOG_IN.toString());
+		this.jBlImage = new JLBaseLabel(Constants.LOGIN_ICON);
+		this.jBLError = new JLBaseLabel("", Constants.BASE_LOGIN_FONT, Color.RED);
+		this.jBBlogin = new JBBaseButton(Constants.LOGIN_BUTTON, Constants.BASE_GREEN);
+		this.jBBlogin.addActionListener(controllerApp);
+		this.jBBlogin.setActionCommand(Commands.C_LOG_IN.toString());
 		this.setLayout(new GridLayout(2, 1, 40, 30));
 		
 		JPanel jPanelComponents = new JPanel();

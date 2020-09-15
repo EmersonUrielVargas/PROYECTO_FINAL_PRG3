@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import controller.Commands;
@@ -19,8 +20,8 @@ public class JPSearch extends JPanel implements MouseListener{
 	int number = 5;
 	byte numberb = (byte) number;
 	
-	private JButtonBase jbSearch;
-	private JTextFieldBase jtfSearh;
+	private JBBaseButton jbSearch;
+	private JTFBaseTextField jtfSearh;
 	
 	public JPSearch(ControllerClient controllerApp) {
 		this.setBackground(Color.WHITE);
@@ -29,7 +30,7 @@ public class JPSearch extends JPanel implements MouseListener{
 		startComponents(controllerApp);
 	}
 	
-	private void startComponents(ControllerApp controllerApp) {
+	private void startComponents(ControllerClient controllerApp) {
 		jtfSearh = new JTFBaseTextField(Constants.JTFSEARCH_INICIAL_TEXT, Constants.EIGHTEEN_BASE_FONT, Constants.BASE_LIGHT_GRAY, 
 				Constants.JTFSEARCH_BORDER_SIZE, this, controllerApp);
 		jbSearch = new JBBaseButton(Constants.SEARH_ICON_PATH, Color.WHITE, controllerApp, Commands.AC_SEARCH_BY_WORDS);
