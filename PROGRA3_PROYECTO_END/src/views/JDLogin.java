@@ -38,6 +38,8 @@ public class JDLogin extends JDialog {
 	public JDLogin(ControllerClient controller, Object[] TypeUser) {
 		super();
 		init(controller, TypeUser);
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
 		
 	}
 	
