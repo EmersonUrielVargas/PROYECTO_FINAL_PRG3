@@ -12,6 +12,7 @@ public enum Commands {
 	
 	
 	
+	AC_SEARCH_BY_WORDS,
 	C_LOG_IN
 	
 }

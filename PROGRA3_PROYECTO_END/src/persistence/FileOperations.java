@@ -73,7 +73,7 @@ public class FileOperations {
 				switch (jsonParser.getCurrentName()) {
 				case "id":
 					jsonParser.nextToken();
-					subcategory.setId(jsonParser.getIntValue());
+					person.setNumberId(jsonParser.getIntValue());
 					break;
 				case "name":
 					jsonParser.nextToken();

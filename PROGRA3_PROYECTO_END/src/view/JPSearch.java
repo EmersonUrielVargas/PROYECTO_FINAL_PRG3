@@ -9,7 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import controller.Commands;
-import controller.ControllerApp;
 import controller.ControllerClient;
 import utils.Constants;
 
