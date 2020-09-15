@@ -3,14 +3,18 @@ package view;
 import java.awt.Color;
 import java.awt.Font;
 
-import javax.swing.BorderFactory;
 import javax.swing.JTextField;
 
 import controller.ControllerClient;
 
-public class JBaseTextField extends JTextField{
+public class JTFBaseTextField extends JTextField{
 	
-	public JBaseTextField(String text, Font font, Color foreColor, ControllerClient controller) {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public JTFBaseTextField(String text, Font font, Color foreColor, ControllerClient controller) {
 		this.setFont(font);
 		this.setForeground(foreColor);
 		this.setText(text);
@@ -18,7 +22,7 @@ public class JBaseTextField extends JTextField{
         this.addKeyListener(controller);
 	}
 	
-	public JBaseTextField(Font font, Color foreColor, ControllerClient controller) {
+	public JTFBaseTextField(Font font, Color foreColor, ControllerClient controller) {
 		this.setFont(font);
 		this.setForeground(foreColor);
 		this.setFocusable(true);

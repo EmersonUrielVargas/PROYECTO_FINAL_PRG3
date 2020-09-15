@@ -9,17 +9,17 @@ import javax.swing.JButton;
 import controller.Commands;
 import controller.ControllerClient;
 
-public class JBaseButton extends JButton{
+public class JBBaseButton extends JButton{
 
 		private static final long serialVersionUID = 1L;
 
-		public JBaseButton(String imgPath, Color backgroundColor) {
+		public JBBaseButton(String imgPath, Color backgroundColor) {
 			this.setIcon(new ImageIcon(getClass().getResource(imgPath)));	
 			this.setBackground(backgroundColor);
 			this.setBorder(null);
 		}
 		
-		public JBaseButton(String imgPath, Color backgroundColor, ControllerClient controllerApp, Commands command) {
+		public JBBaseButton(String imgPath, Color backgroundColor, ControllerClient controllerApp, Commands command) {
 			this.setIcon(new ImageIcon(getClass().getResource(imgPath)));	
 			this.setBackground(backgroundColor);
 			this.setBorder(null);
@@ -27,7 +27,7 @@ public class JBaseButton extends JButton{
 			this.addActionListener(controllerApp);
 		}
 		
-		public JBaseButton(String text, String imgPath, Color backgroundColor) {
+		public JBBaseButton(String text, String imgPath, Color backgroundColor) {
 			this.setText(text);
 			this.setIcon(new ImageIcon(getClass().getResource(imgPath)));	
 			this.setBackground(backgroundColor);
@@ -35,7 +35,7 @@ public class JBaseButton extends JButton{
 		}
 
 		
-		public JBaseButton(String imgPath, String imgPathPress, ControllerClient controllerApp, Commands command) {
+		public JBBaseButton(String imgPath, String imgPathPress, ControllerClient controllerApp, Commands command) {
 			ImageIcon imageIcon = new ImageIcon(getClass().getResource(imgPath));
 			ImageIcon imageIconPress = new ImageIcon(getClass().getResource(imgPathPress));
 			this.setIcon(imageIcon);	

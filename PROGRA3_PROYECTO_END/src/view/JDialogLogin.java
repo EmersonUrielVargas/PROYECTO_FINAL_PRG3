@@ -16,15 +16,15 @@ import controller.ControllerClient;
 import utils.Constants;
 
 public class JDialogLogin extends JDialog {
-	private JBaseLabel jBlImage;
-	private JBaseLabel jBLError;
-	private JBaseLabel jBLNickName;
-	private JBaseTextField jBTFNickName;
-	private JBaseLabel jBLPassword;
-	private JBaseTextField jBTFPassword;
-	private JBaseLabel jBLTypeUser;
-	private JBaseButton jBBlogin;
-	private JBaseComboBox jBCBTypeUser;
+	private JLBaseLabel jBlImage;
+	private JLBaseLabel jBLError;
+	private JLBaseLabel jBLNickName;
+	private JTFBaseTextField jBTFNickName;
+	private JLBaseLabel jBLPassword;
+	private JTFBaseTextField jBTFPassword;
+	private JLBaseLabel jBLTypeUser;
+	private JBBaseButton jBBlogin;
+	private JCBBaseComboBox jBCBTypeUser;
 	
 	public JDialogLogin(ControllerClient controller) {
 		super();

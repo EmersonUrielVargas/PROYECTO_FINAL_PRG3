@@ -5,9 +5,9 @@ import java.util.Comparator;
 public class BinaryTree<T> {
 
 	private NodeTree<T> root;
-	private Comparator comparator;
+	private Comparator<T> comparator;
 
-	public BinaryTree(Comparator comparator) {
+	public BinaryTree(Comparator<T> comparator) {
 		this.root = null;
 		this.comparator = comparator;
 	}
@@ -62,7 +62,7 @@ public class BinaryTree<T> {
 		return result;
 	}
 
-	public NodeTree ask(T data, NodeTree node) {
+	public NodeTree<T> ask(T data, NodeTree<T> node) {
 		if (root == null) {
 			return null;
 		}
@@ -79,16 +79,16 @@ public class BinaryTree<T> {
 		root = removeData(root, data);
 	}
 
-	protected NodeTree removeData(NodeTree node, T data) {
+	protected NodeTree<T> removeData(NodeTree<T> node, T data) {
 		if (node != null) {
 			if (comparator.compare(node.getData(), data) == -1) {
-				NodeTree rigth = removeData(node.getRigth(), data);
+				NodeTree<T> rigth = removeData(node.getRigth(), data);
 				node.setRight(rigth);
 			} else if (comparator.compare(node.getData(), data) == 1) {
-				NodeTree left = removeData(node.getLeft(), data);
+				NodeTree<T> left = removeData(node.getLeft(), data);
 				node.setLeft(left);
 			} else {
-				NodeTree equal = node;
+				NodeTree<T> equal = node;
 				if (equal.getLeft() == null)
 					node = equal.getRigth();
 				else if (equal.getRigth() == null)
@@ -102,9 +102,9 @@ public class BinaryTree<T> {
 		return node;
 	}
 
-	public NodeTree replace(NodeTree equal) {
-		NodeTree auxiliar = equal;
-		NodeTree maximun = equal.getLeft();
+	public NodeTree<T> replace(NodeTree<T> equal) {
+		NodeTree<T> auxiliar = equal;
+		NodeTree<T> maximun = equal.getLeft();
 
 		while (maximun.getRigth() != null) {
 			auxiliar = maximun;
