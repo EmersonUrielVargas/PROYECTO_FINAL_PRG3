@@ -1,4 +1,4 @@
-package view;
+package views;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
