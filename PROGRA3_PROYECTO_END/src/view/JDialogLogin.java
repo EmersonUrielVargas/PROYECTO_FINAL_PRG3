@@ -16,6 +16,7 @@ import controller.ControllerClient;
 import utils.Constants;
 
 public class JDialogLogin extends JDialog {
+<<<<<<< HEAD
 	private JLabelBase jlImage;
 	private JLabelBase jLError;
 	private JLabelBase jLNickName;
@@ -25,6 +26,17 @@ public class JDialogLogin extends JDialog {
 	private JLabelBase jLTypeUser;
 	private JButtonBase jBlogin;
 	private JComboBoxBase jBCBTypeUser;
+=======
+	private JLBaseLabel jBlImage;
+	private JLBaseLabel jBLError;
+	private JLBaseLabel jBLNickName;
+	private JTFBaseTextField jBTFNickName;
+	private JLBaseLabel jBLPassword;
+	private JTFBaseTextField jBTFPassword;
+	private JLBaseLabel jBLTypeUser;
+	private JBBaseButton jBBlogin;
+	private JCBBaseComboBox jBCBTypeUser;
+>>>>>>> branch 'master' of https://github.com/EmersonUrielVargas/PROYECTO_FINAL_PRG3.git
 	
 	public JDialogLogin(ControllerClient controller, Object[] TypeUser) {
 		super();
