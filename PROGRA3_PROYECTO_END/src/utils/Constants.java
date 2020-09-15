@@ -6,7 +6,7 @@ import java.awt.Font;
 public class Constants {
 
 	//Constants of GENERAL APPEARENCE-----------------------------------------------
-		public static final Color BASE_GREEN = Color.decode("#1FA02E");
+		public static final Color BASE_GREEN = Color.decode("#1FA024");
 		public static final Color DARK_GREEN = Color.decode("#187A24");
 		public static final Color LIGHT_GREEN = Color.decode("#A2C535");
 		public static final Color BASE_LIGHT_GRAY = Color.decode("#909090");
