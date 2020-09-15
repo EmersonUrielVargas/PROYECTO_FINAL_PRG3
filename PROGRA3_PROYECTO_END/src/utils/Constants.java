@@ -54,4 +54,11 @@ public class Constants {
 		    
 			public static final String DELETE_PROD_ICON_PATH = "/images/DELETE_PRODUCT.png";
 			public static final String DELETE_PROD_ICON2_PATH = "/images/DELETE_PRODUCT2.png";
+			
+			
+//Constants of JPSearch Class-----------------------------------------------
+			public static final String SEARH_ICON_PATH = "/images/SEARCH_ICON.png";
+			public static final int JBSEARCH_GAP = 0;
+			public static final String JTFSEARCH_INICIAL_TEXT = "Ingrese el Id a buscar";
+			public static final int JTFSEARCH_BORDER_SIZE = 10;
 }
