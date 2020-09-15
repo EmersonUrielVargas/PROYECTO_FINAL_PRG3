@@ -15,7 +15,7 @@ public class User {
 		this.client = client;
 		this.typeUser = typeUser;
 		this.nickName = this.client.getLastName().charAt(0) + this.client.getLastName().charAt(1) + client.getNumberId() + "";
-		this.password = this.client.getName().charAt(0) + this.client.getLastName().charAt(1) + client.getNumberId() + "";;
+		this.password = this.client.getName().charAt(0) + this.client.getLastName().charAt(1) + client.getNumberId() + "";
 	}
 	
 	
